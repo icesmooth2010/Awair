@@ -32,7 +32,7 @@ app.use(express.static("public"));
 // NEED TO GO IN AND UPDATE THIS SECTION
 
 
-// require("./routes/html-routes.js")(app);
+require("./routes/html-routes.js")(app);
 // require("./routes/author-api-routes.js")(app);
 // require("./routes/post-api-routes.js")(app);
 
