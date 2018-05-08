@@ -1,0 +1,22 @@
+{
+  "name": "awair",
+  "version": "1.0.0",
+  "description": "home air quality monitoring",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/icesmooth2010/Awair.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/icesmooth2010/Awair/issues"
+  },
+  "homepage": "https://github.com/icesmooth2010/Awair#readme",
+  "dependencies": {
+    "mysql": "^2.15.0"
+  }
+}
