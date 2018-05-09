@@ -2,32 +2,32 @@ var db = require("../models");
 
 module.exports = function(app) {
   app.get("/api/readings", function(req, res) {
-    // 1. Add a join to include all of each air_quality's Posts
-    db.air_quality.findAll({}).then(function(dbair_quality) {
-      res.json(dbair_quality);
+    // 1. Add a join to include all of each Reading's Posts
+    db.air_quality.findAll({}).then(function(readings) {
+      res.json(readings);
     });
   });
 
-  app.get("/api/readings/:id", function(req, res) {
-    // 2; Add a join to include all of the air_quality's Posts here
-    db.air_quality.findOne({
+  app.get("/api/readings/:mac", function(req, res) {
+    // 2; Add a join to include all of the Reading's Posts here
+    db.Reading.findOne({
       where: {
-        id: req.params.id
+        mac: req.params.mac
       }
-    }).then(function(dbair_quality) {
-      res.json(dbair_quality);
+    }).then(function(readings) {
+      res.json(readings);
     });
   });
 
 
 
   app.delete("/api/readings/:mac", function(req, res) {
-    db.air_quality.destroy({
+    db.Reading.destroy({
       where: {
         mac: req.params.mac
       }
-    }).then(function(dbair_quality) {
-      res.json(dbair_quality);
+    }).then(function(readings) {
+      res.json(readings);
     });
   });
 
