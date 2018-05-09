@@ -1,5 +1,5 @@
 module.exports = function(sequelize, DataTypes) {
-    var airQuality = sequelize.define("Air Quality", {
+    var airQuality = sequelize.define("air_quality", {
       Time: DataTypes.FLOAT,
       MAC: DataTypes.STRING,
       PM1: DataTypes.FLOAT,
