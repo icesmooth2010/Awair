@@ -1,5 +1,5 @@
 module.exports = function(sequelize, DataTypes) {
-    var airQuality = sequelize.define("air_quality", {
+    var Reading = sequelize.define("Reading", {
       Time: DataTypes.FLOAT,
       MAC: DataTypes.STRING,
       PM1: DataTypes.FLOAT,
@@ -14,14 +14,16 @@ module.exports = function(sequelize, DataTypes) {
       NO: DataTypes.INTEGER,
     });
   
-    // airQuality.associate = function(models) {
-    //   // Associating airQuality with Posts
-    //   // When an airQuality is deleted, also delete any associated Posts
-    //   airQuality.hasMany(models.Post, {
-    //     onDelete: "cascade"
-    //   });
-    // };
+    Reading.associate = function(models) {
+      // Associating Reading with Posts
+      // When an Reading is deleted, also delete any associated Posts
+      Reading.belongsTo(models.Device, {
+        foreignKey: {
+          allowNull: false
+        }
+      });
+    };
   
-    return airQuality;
+    return Reading;
   };
   
