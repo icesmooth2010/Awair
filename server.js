@@ -35,7 +35,9 @@ app.use(express.static(__dirname + "/public/form-3"));
 
 
 require("./routes/html-routes.js")(app);
-require("./routes/aqAPI.js")(app);
+require("./routes/deviceAPI.js")(app);
+require("./routes/readingAPI.js")(app);
+require("./routes/usersAPI.js")(app);
 
 
 // Syncing our sequelize models and then starting our Express app
