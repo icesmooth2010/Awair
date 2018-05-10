@@ -6,14 +6,26 @@
 
 body {
   padding-top: 54px;
+  background-color: black
 }
 
 @media (min-width: 992px) {
   body {
     padding-top: 56px;
+
   }
 }
 
 .card {
   height: 100%;
+  background-color: crimson
+}
+.jumbotron {
+  background-color: crimson
+}
+nav.navbar {
+  background-color: crimson
+}
+.button {
+  background-color: crimson
 }
