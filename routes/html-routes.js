@@ -33,7 +33,7 @@ module.exports = function(app) {
   });
 
   // will display all readings for selected device ^^^^^
-  app.get("/dashboard/:mac/reading", function(req, res) {
+  app.get("/dashboard/reading", function(req, res) {
     res.sendFile(path.join(__dirname, "../public/form-3/graphs.html"));
   });
 };
