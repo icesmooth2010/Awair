@@ -1,6 +1,7 @@
 module.exports = function(sequelize, DataTypes) {
     var Reading = sequelize.define("Reading", {
-      Time: DataTypes.FLOAT,
+      Time: DataTypes.TIME,
+      Date: DataTypes.DATE,
       MAC: DataTypes.STRING,
       PM1: DataTypes.FLOAT,
       PM25: DataTypes.FLOAT,
