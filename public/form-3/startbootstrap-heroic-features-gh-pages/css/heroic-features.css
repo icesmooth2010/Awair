@@ -6,7 +6,7 @@
 
 body {
   padding-top: 54px;
-  background-color: black
+  background-image: url("1.jpg")
 }
 
 @media (min-width: 992px) {
