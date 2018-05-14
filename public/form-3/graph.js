@@ -3,8 +3,12 @@ var badGlobalArrayYesterday = [];
 var badGlobalArrayLastWeek = [];
 var badGlobalArrayLastMonth = [];
 
+
+
+
+
 $.ajax({
-    url: "http://localhost:7000/api/reading",
+    url: "http://localhost:7000/api/Reading",
     method: "GET"
 }).then(function (response) {
 
@@ -21,7 +25,7 @@ $.ajax({
     var avgYesterdayNO = averageYesterday(response, "NO");
 
     //function to create graph for yesterday's data
-    averageYesterdayGraph(avgYesterdayPM1, avgYesterdayPM25, avgLastWeek10, avgLastWeekTemp, avgLastWeekHum, avgLastWeekNO);
+    averageYesterdayGraph(avgYesterdayPM1, avgYesterdayPM25, avgYesterdayPM10, avgYesterdayTemp, avgYesterdayHum, avgYesterdayNO);
 
 
 
@@ -54,19 +58,11 @@ $.ajax({
     //removed CO because it was throwing off scale
     // var avgLastMonthCO = averageLastMonth(response, "CO");
     var avgLastMonthNO = averageLastMonth(response, "NO");
-    
+
     //function to create graph for last month's data
     averageLastMonthGraph(avgLastMonthPM1, avgLastMonthPM25, avgLastMonthPM10, avgLastMonthTemp, avgLastMonthHum, avgLastMonthNO);
 });
 
-//Function to round numbers to 3 decimal places. It requires 2 variables, the number (number) and how many decimal places you wish to round to (precision)
-function round(number, precision) {
-    var shift = function (number, precision) {
-        var numArray = ("" + number).split("e");
-        return +(numArray[0] + "e" + (numArray[1] ? (+numArray[1] + precision) : precision));
-    };
-    return shift(Math.round(shift(number, +precision)), -precision);
-}
 
 
 //Function that will get the averages for the 7 tracked values from yesterday
@@ -77,6 +73,7 @@ function averageYesterday(response, value) {
 
     let N = 0; // how many days to average over
     let avgYesterdayValue = 0;
+    console.log(response);
     for (let i = 0; i < response.length; i++) {
         // create date object for this reponse
         var date = new Date(response[i].Date);
@@ -100,18 +97,19 @@ function averageLastWeek(response, value) {
     let lastWeekEndDate = new Date('2018-05-11');
 
     let N = 0; // how many days to average over
-    let avgYesterdayValue = 0;
+    let avgLastWeekValue = 0;
     for (let i = 0; i < response.length; i++) {
         // create date object for this reponse
         var date = new Date(response[i].Date);
 
         // if this response has data from yesterday, then sum
         if (date.getTime() >= lastWeekStartDate.getTime() || date.getTime() <= lastWeekEndDate) {
-            avgYesterdayValue += response[i][value];
+            avgLastWeekValue += response[i][value];
             N += 1;
         }
     }
-    return avgYesterdayValue / N;
+    badGlobalArrayLastWeek.push(avgLastWeekValue / N);
+    return avgLastWeekValue / N;
 }
 
 
@@ -123,18 +121,19 @@ function averageLastMonth(response, value) {
     let lastMonthEndDate = new Date('2018-05-11');
 
     let N = 0; // how many days to average over
-    let avgYesterdayValue = 0;
+    let avgLastMonthvalue = 0;
     for (let i = 0; i < response.length; i++) {
         // create date object for this reponse
         var date = new Date(response[i].Date);
 
         // if this response has data from yesterday, then sum
         if (date.getTime() >= lastMonthStartDate.getTime() || date.getTime() <= lastMonthEndDate) {
-            avgYesterdayValue += response[i][value];
+            avgLastMonthvalue += response[i][value];
             N += 1;
         }
     }
-    return avgYesterdayValue / N;
+    badGlobalArrayLastMonth.push(avgLastMonthvalue / N);
+    return avgLastMonthvalue / N;
 }
 
 
@@ -213,16 +212,19 @@ function averageYesterdayGraph(avgYesterdayPM1, avgYesterdayPM25, avgYesterdayPM
                     }
                 }
             },
+            legend: {
+                display: false
+                },
             scales: {
-                yAxes: [{
-                    ticks: {
-                        beginAtZero: true
-                    }
-                }]
-            },
-            responsive: false
-        }
-    });
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }]
+                },
+                responsive: false
+            }
+        });
 
 }
 
@@ -394,3 +396,11 @@ function averageLastMonthGraph(avgLastMonthPM1, avgLastMonthPM25, avgLastMonthPM
     });
 
 }
+    // //Function to round numbers to 3 decimal places. It requires 2 variables, the number (number) and how many decimal places you wish to round to (precision)
+// function round(number, precision) {
+//     var shift = function (number, precision) {
+//         var numArray = ("" + number).split("e");
+//         return +(numArray[0] + "e" + (numArray[1] ? (+numArray[1] + precision) : precision));
+//     };
+//     return shift(Math.round(shift(number, +precision)), -precision);
+// }

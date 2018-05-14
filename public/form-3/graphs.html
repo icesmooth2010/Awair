@@ -9,9 +9,13 @@
 </head>
 
 <body>
-
+    <h1>Average Air Quality in Your Home Yesterday</h1>
     <canvas id="myChart" width="800" height="800"></canvas>
+
+    <h1>Average Air Quality in Your Home Last Week</h1>
     <canvas id="myChart2" width="800" height="800"></canvas>
+
+    <h1>Average Air Quality in Your Home Last Month</h1>
     <canvas id="myChart3" width="800" height="800"></canvas>
 
 
@@ -31,17 +35,6 @@
 
 
 
-        //$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
-        //$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
-        //$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
-        
-        //START HERE!!!
-        //Need to figure out how to solve asynchronous error. ALl else is working. Data is pulling in correctly. first graph is generating correctly. 2nd and 3rd grahps are not generating. 
-        //$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
-        //$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
-        //$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
-
-        
     $.ajax({
         url: "http://localhost:7000/api/Reading",
         method: "GET"
@@ -93,7 +86,7 @@
         //removed CO because it was throwing off scale
         // var avgLastMonthCO = averageLastMonth(response, "CO");
         var avgLastMonthNO = averageLastMonth(response, "NO");
-        
+
         //function to create graph for last month's data
         averageLastMonthGraph(avgLastMonthPM1, avgLastMonthPM25, avgLastMonthPM10, avgLastMonthTemp, avgLastMonthHum, avgLastMonthNO);
     });
@@ -119,8 +112,8 @@
                 N += 1;
             }
         }
-        badGlobalArrayYesterday.push(avgYesterdayValue/N);
-        return avgYesterdayValue/N;
+        badGlobalArrayYesterday.push(avgYesterdayValue / N);
+        return avgYesterdayValue / N;
     }
 
 
@@ -247,6 +240,9 @@
                         }
                     }
                 },
+                legend: {
+                    display: false
+                },
                 scales: {
                     yAxes: [{
                         ticks: {
@@ -330,6 +326,9 @@
                             return data['datasets'][0]['data'][tooltipItem['index']];
                         }
                     }
+                },
+                legend: {
+                    display: false
                 },
                 scales: {
                     yAxes: [{
@@ -415,6 +414,9 @@
                             return data['datasets'][0]['data'][tooltipItem['index']];
                         }
                     }
+                },
+                legend: {
+                    display: false
                 },
                 scales: {
                     yAxes: [{
