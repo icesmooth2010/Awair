@@ -1,7 +1,7 @@
 {
     "development": {
       "username": "root",
-      "password": "test",
+      "password": "Passwordy1!",
       "database": "awair",
       "host": "127.0.0.1",
       "dialect": "mysql"

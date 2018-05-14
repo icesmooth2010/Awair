@@ -28,6 +28,7 @@ module.exports = function(app) {
   });
 
   // will display all readings for selected device ^^^^^
+
   app.get("/graphs", function(req, res) {
     res.sendFile(path.join(__dirname, "../public/form-3/graphs.html"));
   });
