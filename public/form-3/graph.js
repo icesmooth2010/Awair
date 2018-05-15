@@ -138,8 +138,6 @@ function averageLastMonth(response, value) {
 
 
 
-
-
 //function for rendering average yesterday graph
 function averageYesterdayGraph(avgYesterdayPM1, avgYesterdayPM25, avgYesterdayPM10, avgYesterdayTemp, avgYesterdayHum, avgYesterdayNO) {
     var canvas = document.getElementById("myChart");
@@ -222,7 +220,7 @@ function averageYesterdayGraph(avgYesterdayPM1, avgYesterdayPM25, avgYesterdayPM
                         }
                     }]
                 },
-                responsive: false
+                responsive: true
             }
         });
 
@@ -306,7 +304,7 @@ function averageLastWeekGraph(avgLastWeekPM1, avgLastWeekPM25, avgLastWeek10, av
                     }
                 }]
             },
-            responsive: false
+            responsive: true
         }
     });
 
@@ -391,7 +389,7 @@ function averageLastMonthGraph(avgLastMonthPM1, avgLastMonthPM25, avgLastMonthPM
                     }
                 }]
             },
-            responsive: false
+            responsive: true
         }
     });
 
