@@ -1,23 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <head>
+<head>
 
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Bootstrap Login Form Template</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap Login Form Template</title>
 
-        <!-- CSS -->
-        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500">
-        <link rel="stylesheet" href="form-3/assets/bootstrap/css/bootstrap.min.css">
-        <link rel="stylesheet" href="form-3/assets/font-awesome/css/font-awesome.min.css">
-		<link rel="stylesheet" href="form-3/assets/css/form-elements.css">
-        <link rel="stylesheet" href="form-3/assets/css/style.css">
+    <!-- CSS -->
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500">
+    <link rel="stylesheet" href="form-3/assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="form-3/assets/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="form-3/assets/css/form-elements.css">
+    <link rel="stylesheet" href="form-3/assets/css/style.css">
 
-        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-        <!--[if lt IE 9]>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
             <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
             <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
         <![endif]-->
@@ -33,7 +33,7 @@
 
     <body>
         <!-- Navigation -->
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <nav class="navbar navbar-expand-lg">
                 <a class="navbar-brand" onclick="location.href='/';">AIRU</a>
                 <button type="button" class="btn btn-default navbar-btn" onclick="location.href='/awair';">What is AWAIR</button>
                 <button type="button" class="btn btn-default navbar-btn" onclick="location.href='/team';">About Us</button>
@@ -56,17 +56,32 @@
                             </div>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col-sm-6 col-sm-offset-3 form-box">
-                        	<div class="form-top">
-                        		<div class="form-top-left">
-                        			<h3>Login to our site</h3>
-                            		<p>Enter your username and password to log on:</p>
-                        		</div>
-                        		<div class="form-top-right">
-                        			<i class="fa fa-lock"></i>
-                        		</div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6 col-sm-offset-3 form-box">
+                        <div class="form-top">
+                            <div class="form-top-left">
+                                <h3>Login to our site</h3>
+                                <p>Enter your username and password to log on:</p>
                             </div>
+                            <div class="form-top-right">
+                                <i class="fa fa-lock"></i>
+                            </div>
+<<<<<<< HEAD
+                        </div>
+                        <div class="form-bottom">
+                            <form role="form" action="" method="post" class="login-form">
+                                <div class="form-group">
+                                    <label class="sr-only" for="form-username">Username</label>
+                                    <input type="text" name="form-username" placeholder="Username..." class="form-username form-control" id="form-username">
+                                </div>
+                                <div class="form-group">
+                                    <label class="sr-only" for="form-password">Password</label>
+                                    <input type="password" name="form-password" placeholder="Password..." class="form-password form-control" id="form-password">
+                                </div>
+                                <button type="submit" class="btn signInBtn">Sign in!</button>
+                            </form>
+=======
                             <div class="form-bottom">
 			                    <form role="form" action="" method="post" class="login-form">
 			                    	<div class="form-group">
@@ -80,40 +95,54 @@
 			                        <button type="submit" class="btn" onclick="location.href='/graphs';">Sign in!</button>
 			                    </form>
 		                    </div>
+>>>>>>> master
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col-sm-6 col-sm-offset-3 social-login">
-                        	<h3>...or login with:</h3>
-                        	<div class="social-login-buttons">
-	                        	<a class="btn btn-link-2" href="https://www.facebook.com/">
-	                        		<i class="fa fa-facebook"></i> Facebook
-	                        	</a>
-	                        	<a class="btn btn-link-2" href="https://twitter.com/">
-	                        		<i class="fa fa-twitter"></i> Twitter
-	                        	</a>
-	                        	<a class="btn btn-link-2" href="https://plus.google.com/discover">
-	                        		<i class="fa fa-google-plus"></i> Google Plus
-	                        	</a>
-                        	</div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6 col-sm-offset-3 social-login">
+                        <h3>...or login with:</h3>
+                        <div class="social-login-buttons">
+                            <a class="btn btn-link-2" href="https://www.facebook.com/">
+                                <i class="fa fa-facebook"></i> Facebook
+                            </a>
+                            <a class="btn btn-link-2" href="https://twitter.com/">
+                                <i class="fa fa-twitter"></i> Twitter
+                            </a>
+                            <a class="btn btn-link-2" href="https://plus.google.com/discover">
+                                <i class="fa fa-google-plus"></i> Google Plus
+                            </a>
                         </div>
                     </div>
                 </div>
             </div>
-            
         </div>
 
+    </div>
 
-        <!-- Javascript -->
-        <script src="form-3/assets/js/jquery-1.11.1.min.js"></script>
-        <script src="form-3/assets/bootstrap/js/bootstrap.min.js"></script>
-        <script src="form-3/assets/js/jquery.backstretch.min.js"></script>
-        <script src="form-3/assets/js/scripts.js"></script>
-        
-        <!--[if lt IE 10]>
+
+    <!-- Javascript -->
+    <script src="form-3/assets/js/jquery-1.11.1.min.js"></script>
+    <script src="form-3/assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="form-3/assets/js/jquery.backstretch.min.js"></script>
+    <script src="form-3/assets/js/scripts.js"></script>
+
+    <!--[if lt IE 10]>
             <script src="assets/js/placeholder.js"></script>
         <![endif]-->
 
-    </body>
+    <script>
+
+            // $(".signInBtn").click(function(){
+            //     if($(".form-userame" !==null)) {
+            //         window.location.href="./graphs.html";
+            //     };
+            //     var input = $(".form-username").val();
+            //     document.write("<h2>" + "Hello " + input + "</h2>");
+            // });
+
+    </script>
+
+</body>
 
 </html>
