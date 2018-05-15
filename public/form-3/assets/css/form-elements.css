@@ -72,3 +72,28 @@ button.btn:active { outline: 0; opacity: 0.6; color: #fff; -moz-box-shadow: none
 button.btn:focus { outline: 0; opacity: 0.6; background: #de615e; color: #fff; }
 
 button.btn:active:focus, button.btn.active:focus { outline: 0; opacity: 0.6; background: #de615e; color: #fff; }
+
+.airU {
+    width:10%;
+    margin-left:63%;
+    border-radius:50%;
+}
+
+.jumbotron { 
+    background-color:black !important;
+    border-radius:35% !important;
+    
+}
+
+.disp {
+    color:red !important;
+    text-align:center;
+}
+
+.navbar {
+    background-color:black !important;
+}
+
+.text {
+    font-size: 18pt !important;
+}
