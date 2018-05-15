@@ -19,7 +19,11 @@ module.exports = function(app) {
     });
   });
 
-
+  app.post("/api/User", function(req, res) {
+    db.User.create(req.body).then(function(users) {
+      res.json(users);
+    });
+  });
 
   app.delete("/api/User/:user", function(req, res) {
     db.User.destroy({
