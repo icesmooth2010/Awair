@@ -19,7 +19,11 @@ module.exports = function(app) {
     });
   });
 
-
+  app.post("/api/device", function(req, res) {
+    db.Device.create(req.body).then(function(devices) {
+      res.json(devices);
+    });
+  });
 
   app.delete("/api/device/:mac", function(req, res) {
     db.Device.destroy({

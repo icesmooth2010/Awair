@@ -8,8 +8,6 @@ CREATE DATABASE awair;
 
 
 
-
-
 -- use the following information to generate your dummy data. Make sure to remove the NN(not null) check for the following fields ----> createdAt, updatedAt, and DeviceId.
 
 

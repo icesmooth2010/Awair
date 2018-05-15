@@ -1,3 +1,5 @@
+import { read } from "fs/promises";
+
 var db = require("../models");
 
 module.exports = function(app) {
@@ -19,7 +21,11 @@ module.exports = function(app) {
     });
   });
 
-
+  app.post("/api/Reading", function(req, res) {
+    db.Reading.create(req.body).then(function(readings) {
+      res.json(readings);
+    });
+  });
 
   app.delete("/api/Reading/:mac", function(req, res) {
     db.Reading.destroy({
@@ -32,3 +38,4 @@ module.exports = function(app) {
   });
 
 };
+

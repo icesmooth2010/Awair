@@ -19,21 +19,17 @@ module.exports = function(app) {
 
   // page about what the project is about
   app.get("/awair", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/form-3/product_info.html"));
+    res.sendFile(path.join(__dirname, "../public/form-3/about.html"));
   });
 
   // Page about our team
   app.get("/team", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/form-3/team.html"));
-  });
-
-  // Landing page once user logs in. Will display all devices for the user
-  app.get("/dashboard", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/form-3/dashboard.html"));
+    res.sendFile(path.join(__dirname, "../public/form-3/theTeam.html"));
   });
 
   // will display all readings for selected device ^^^^^
-  app.get("/dashboard/:mac/reading", function(req, res) {
+
+  app.get("/graphs", function(req, res) {
     res.sendFile(path.join(__dirname, "../public/form-3/graphs.html"));
   });
 };
