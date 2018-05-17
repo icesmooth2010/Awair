@@ -74,10 +74,12 @@ button.btn:focus { outline: 0; opacity: 0.6; background: #de615e; color: #fff; }
 button.btn:active:focus, button.btn.active:focus { outline: 0; opacity: 0.6; background: #de615e; color: #fff; }
 
 .airU {
-    width:10%;
-    margin-left:63%;
+    width:13%;
     border-radius:50%;
+   
 }
+
+
 
 .jumbotron { 
     background-color:black !important;
@@ -94,6 +96,8 @@ button.btn:active:focus, button.btn.active:focus { outline: 0; opacity: 0.6; bac
     background-color:black !important;
 }
 
-.text {
-    font-size: 18pt !important;
+.textz {
+    font-size: 16pt !important;
+    /* transform: scale3d(2.8, 0.4, 0.7) !important; */
 }
+
